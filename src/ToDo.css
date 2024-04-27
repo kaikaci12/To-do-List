@@ -65,7 +65,7 @@ input {
 }
 .input-container svg {
   position: absolute;
-  left: 56.5%;
+  left: 56%;
 }
 .add-todo-list {
   all: unset;
@@ -80,4 +80,39 @@ input {
 }
 .add-todo-list:hover {
   background: greenyellow;
+}
+.todo-lists-container {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 28px;
+  width: 100%;
+}
+.task-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.task {
+  color: #0d0d0d;
+  font-size: 18px;
+  font-weight: 500;
+}
+.task-time {
+  color: #888;
+  font-size: 14px;
+  font-weight: 400;
+}
+.checkbox-and-delete {
+  display: flex;
+  gap: 14px;
+}
+.checkbox-and-delete svg {
+  cursor: pointer;
 }
