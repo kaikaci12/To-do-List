@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ToDo.css";
 
 function ToDoApp() {
   const [value, setValue] = useState("");
   const [todos, setTodos] = useState([]);
+  const [currentTime, setCurrentTime] = useState("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+      setCurrentTime(
+        now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+      );
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   function addTask(e) {
     e.preventDefault();
@@ -30,8 +41,8 @@ function ToDoApp() {
       <h1>Todo</h1>
       <div className="to-do-window">
         <div className="time-and-image">
-          <span>Thur 9</span>
-          <h2>6:23 AM</h2>
+          <span>{new Date().toDateString()}</span>
+          <h2>{currentTime}</h2>
         </div>
 
         <div className="add-list-container">
