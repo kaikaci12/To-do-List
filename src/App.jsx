@@ -1,7 +1,13 @@
 import "./App.css";
-import ToDoApp from "./ToDo";
+import ToDo from "./ToDo";
+import { useEffect, useState } from "react";
+
 function App() {
-  return <ToDoApp />;
+  return (
+    <div>
+      <ToDo />
+    </div>
+  );
 }
 
 export default App;
